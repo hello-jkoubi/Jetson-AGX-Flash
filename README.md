@@ -139,7 +139,7 @@ Plug in power. The device will automatically enter **Recovery Mode**.
 You should now see this:
 
 <div align="center">
-  <img src="docs/step1.png" alt="base" width="400"/>
+  <img src="docs/step1.png" alt="base" width="600"/>
 </div>
 
 **Note: Make sure Jetpack version is `JetPack 6.x`**
@@ -153,7 +153,7 @@ You should now see this:
   - **`SDKs install location`**
 
 <div align="center">
-  <img src="docs/step2.png" alt="base" width="400"/>
+  <img src="docs/step2.png" alt="base" width="600"/>
 </div>
 ---
 
@@ -168,7 +168,7 @@ You should now see this:
 - Click **Flash**
 
 <div align="center">
-  <img src="docs/step3-flash.png" alt="base" width="400"/>
+  <img src="docs/step3-flash.png" alt="base" width="600"/>
 </div>
 
 ---

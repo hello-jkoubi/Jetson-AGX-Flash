@@ -8,7 +8,7 @@ This guide provides a complete workflow for flashing a Jetson AGX Orin Developer
 
 ---
 
-## 1. Requirements
+## Requirements
 
 - **Host OS**: Ubuntu 22.04 LTS  
   (Native installation recommended, avoid VM)
@@ -27,12 +27,12 @@ This guide provides a complete workflow for flashing a Jetson AGX Orin Developer
 
 ---
 
-## 2. Install NVIDIA SDK Manager (JetPack) on Ubuntu 22.04
+## 1. Install NVIDIA SDK Manager (JetPack) on Ubuntu 22.04
 
 Before flashing the Jetson, you need to install **NVIDIA SDK Manager**, which is used to download and flash **JetPack**.
 
 
-### Step 1: Download SDK Manager
+### Step 1.1: Download SDK Manager
 
 Go to the official NVIDIA page:  
 https://developer.nvidia.com/nvidia-sdk-manager
@@ -43,7 +43,7 @@ Download the **Ubuntu 22.04 `.deb` package**.
 
 ---
 
-### Step 2: Install SDK Manager
+### Step 1.2: Install SDK Manager
 
 Navigate to your Downloads folder and install:
 
@@ -52,14 +52,14 @@ cd ~/Downloads
 sudo apt install ./sdkmanager_*.deb
 ```
 
-### Step 3: Launch
+### Step 1.3: Launch
 
 ```bash
 sdkmanager
 ```
 
 ---
-## 3. Enter Force Recovery Mode (Jumper Method)
+## 2. Enter Force Recovery Mode (Jumper Method)
 
 > **Note**  
 > Force Recovery Mode can also be entered using the physical buttons on the board  
@@ -69,7 +69,7 @@ sdkmanager
 
 ---
 
-### Step 1: Locate Pins
+### Step 2.1: Locate Pins
 
 <div align="center">
   <img src="docs/pins_J42.png" alt="base" width="600"/>
@@ -83,7 +83,7 @@ Locate the `Automation header (J42)` along with the 2 pins:
 
 ---
 
-### Step 2: Connect Jumper
+### Step 2.2: Connect Jumper
 
 
 Connect:
@@ -93,7 +93,7 @@ to
 
 ---
 
-### Step 3: Connect USB-C to Host (Required)
+### Step 2.3: Connect USB-C to Host (Required)
 
 > **Important**  
 > The Jetson has **two USB-C ports**, but only one is used for flashing.  
@@ -117,15 +117,15 @@ Connect a **USB-C data cable** from:
 
 --- 
 
-### Step 4: Power On
+### Step 2.4: Power On
 
 Plug in power. The device will automatically enter **Recovery Mode**.
 
 ---
 
-## 4. SDK Manager Configuration
+## 3. SDK Manager Configuration
 
-### Step 01
+### Step 3.1
 
 
 - Select:
@@ -146,7 +146,7 @@ You should now see this:
 
 ---
 
-### Step 02
+### Step 3.2
 - Select appropriate folders for:
 
   - **`Download folder`**
@@ -157,7 +157,7 @@ You should now see this:
 </div>
 ---
 
-### Step 03: Flash Settings
+### Step 3.3: Flash Settings
 
 
 - **OEM Configuration**: Pre-Config
@@ -173,19 +173,19 @@ You should now see this:
 
 ---
 
-## 5. Post-Flash SDK Installation
+## 4. Post-Flash SDK Installation
 
-### Step 1: Remove Jumper
+### Step 4.1: Remove Jumper
 Once flashing reaches **100%**, remove the jumper wire immediately.
 
 ---
 
-### Step 2: Reset Device
+### Step 4.2: Reset Device
 Press the **Reset button** on the Jetson.
 
 ---
 
-### Step 3: Verify Connection
+### Step 4.3: Verify Connection
 
 ```bash
 ping 192.168.55.1
@@ -193,7 +193,7 @@ ping 192.168.55.1
 
 ---
 
-### Step 4: Install SDK Components
+### Step 4.4: Install SDK Components
 
 After reboot, SDK Manager will automatically prompt for installation.
 
